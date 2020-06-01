@@ -41,6 +41,42 @@ class Internet {
     return $(`.example .figure:nth-child(${index + 2}) .figcaption h5`);
   }
 
+  get target() {
+    return $(".example #target");
+  }
+
+  get result() {
+    return $(".example #result");
+  }
+
+  scrollToPageFooter() {
+    this.pageFooter.moveTo(1, 1);
+  }
+  /**
+   * Click the target input field
+   */
+  clickTarget() {
+    this.target.waitForDisplayed();
+    this.target.click();
+  }
+
+  /**
+   * Send keyboard keys to target
+   * @param {String} text The keyboard text to enter
+   */
+  sendKeysToTarget(text) {
+    this.target.waitForDisplayed();
+    this.target.keys(text);
+  }
+
+  /**
+   * Retur pressed key
+   */
+  getResultText() {
+    this.result.waitForDisplayed();
+    return this.result.getText();
+  }
+
   /**
    * Hover over the specified image
    * @param {Number} index the specific index of the images
