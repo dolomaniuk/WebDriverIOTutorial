@@ -1,0 +1,12 @@
+npm init -y
+npm install webdriverio --save-dev
+npm install @wdio/cli --save-dev
+npx wdio config (chromedriver, spec, local, url: the-internet-herokuapp.com)
+npm i chai --save-dev
+npm i chai-webdriverio --save-dev
+npm i local-runner --save-dev
+
+package.json
+   "scripts": {
+    "test": "npx wdio wdio.conf.js"
+  },
