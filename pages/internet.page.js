@@ -34,6 +34,31 @@ class Internet {
     return $("div.example input");
   }
 
+  figures(index) {
+    return $(`.example .figure:nth-child(${index + 2}) img`); // +2 cause index of the first images is 3
+  }
+  figureDetails(index) {
+    return $(`.example .figure:nth-child(${index + 2}) .figcaption h5`);
+  }
+
+  /**
+   * Hover over the specified image
+   * @param {Number} index the specific index of the images
+   */
+  hoverOnFigure(index) {
+    this.figures(index).waitForDisplayed();
+    this.figures(index).moveTo(1, 1);
+  }
+
+  /**
+   * Return the text of the figure details
+   * @param {Number} index the index of the element
+   */
+  getFigureDetailsText(index) {
+    this.figureDetails(index).waitForDisplayed();
+    return this.figureDetails(index).getText();
+  }
+
   /**
    * Enter some text into field
    * @param {Number} text to be entered into field
