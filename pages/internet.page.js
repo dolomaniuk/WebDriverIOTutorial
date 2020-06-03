@@ -49,6 +49,39 @@ class Internet {
     return $(".example #result");
   }
 
+  get hereLink() {
+    return $("//a[.='Click Here']");
+    // return $(".example a");
+  }
+
+  get iframe() {
+    // return $('#mce_0_ifr')
+    return $("//iframe[@id='mce_0_ifr']");
+  }
+  get iframeBody() {
+    // return $("#tinymce");
+    return $("//body[@id='tinymce']");
+  }
+
+  /**
+   * Enter text on the iframe
+   * @param {String} text the text to be entered
+   */
+  sendTextToFrame(text) {
+    this.iframeBody.waitForDisplayed();
+    this.iframeBody.clearValue();
+    this.iframeBody.click();
+    this.iframeBody.keys(text);
+  }
+
+  /**
+   * Click the 'click here' link
+   */
+  clickHereLink() {
+    this.hereLink.waitForDisplayed();
+    this.hereLink.click();
+  }
+
   scrollToPageFooter() {
     this.pageFooter.scrollIntoView();
   }
