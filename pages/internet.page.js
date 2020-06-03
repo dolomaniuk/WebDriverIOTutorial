@@ -63,6 +63,27 @@ class Internet {
     return $("//body[@id='tinymce']");
   }
 
+  get columnA() {
+    return $("div#column-a");
+  }
+  get columnB() {
+    return $("div#column-b");
+  }
+
+  get columnAHeader() {
+    return $("div#column-a > header");
+  }
+  get columnBHeader() {
+    return $("div#column-b > header");
+  }
+
+  dragColumnAToColumnB() {
+    this.columnA.waitForDisplayed();
+    this.columnA.click();
+    this.columnA.dragAndDrop(this.columnB);
+    browser.pause(3000);
+  }
+
   /**
    * Enter text on the iframe
    * @param {String} text the text to be entered
