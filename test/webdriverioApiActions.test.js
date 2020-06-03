@@ -1,6 +1,6 @@
 internetPage = require("../pages/internet.page");
 
-describe("WebdriverIO API Actions", () => {
+describe.skip("WebdriverIO API Actions", () => {
   it("should hover on figure 1", () => {
     browser.url(`${browser.options.baseUrl}/hovers`);
     internetPage.hoverOnFigure(1);
@@ -37,7 +37,7 @@ describe("WebdriverIO API Actions", () => {
 
 // exception moveTo() without arguments throws out of bounds error
 describe("Scroll to Element", () => {
-  it.skip("should scroll to the footer", () => {
+  it("should scroll to the footer", () => {
     browser.url("/");
     internetPage.pageHeader.waitForDisplayed();
     internetPage.scrollToPageFooter();

@@ -50,7 +50,7 @@ class Internet {
   }
 
   scrollToPageFooter() {
-    this.pageFooter.moveTo(1, 1);
+    this.pageFooter.scrollIntoView();
   }
   /**
    * Click the target input field
