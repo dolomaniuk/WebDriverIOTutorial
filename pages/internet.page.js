@@ -82,10 +82,24 @@ class Internet {
   }
 
   /**
-   * text of menu from dropdown
+   * text of item from dropdown
    */
   dropdownMenuOption(text) {
     return $(`//select[@id='dropdown']/option[.='${text}']`);
+  }
+
+  jsAlertButton(textButton) {
+    return $(`//li/button[.='${textButton}']`);
+  }
+
+  /**
+   * Click on the specified alert button
+   * @param {String} text the text of Alert button
+   */
+  clickJSAlertButton(text) {
+    let alertButton = this.jsAlertButton(text);
+    alertButton.waitForDisplayed();
+    alertButton.click();
   }
 
   clickDropdownMenuOption(text) {
