@@ -77,6 +77,23 @@ class Internet {
     return $("div#column-b > header");
   }
 
+  get dropdownMenu() {
+    return $("#dropdown");
+  }
+
+  /**
+   * text of menu from dropdown
+   */
+  dropdownMenuOption(text) {
+    return $(`//select[@id='dropdown']/option[.='${text}']`);
+  }
+
+  clickDropdownMenuOption(text) {
+    this.dropdownMenu.waitForDisplayed();
+    this.dropdownMenu.click();
+    this.dropdownMenuOption(text).click();
+  }
+
   dragColumnAToColumnB() {
     this.columnA.waitForDisplayed();
     this.columnA.click();
