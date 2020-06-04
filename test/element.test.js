@@ -28,8 +28,4 @@ describe("Interacting with elements", () => {
   it("Is subheader enabled", () => {
     console.log(internetPage.subHeaing.isEnabled());
   });
-
-  it("Click Element", () => {
-    internetPage.clickOnLink();
-  });
 });

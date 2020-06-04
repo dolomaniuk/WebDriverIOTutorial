@@ -3,7 +3,7 @@ internetPage = require("../pages/internet.page");
 describe("Dropdown menu", () => {
   it("should select option 1", () => {
     selectedItem = "Option 1";
-    browser.url(`${browser.options.baseUrl}dropdown`);
+    internetPage.clickOnLink("Dropdown");
     internetPage.clickDropdownMenuOption(selectedItem);
     assert.equal(
       true,

@@ -1,7 +1,7 @@
 internetPage = require("../pages/internet.page");
 describe("JavaScript Alerts", () => {
   it("should get text of alert", () => {
-    browser.url(`${browser.options.baseUrl}javascript_alerts`);
+    internetPage.clickOnLink("JavaScript Alerts");
     internetPage.clickJSAlertButton("Click for JS Alert");
     assert.equal("I am a JS Alert", browser.getAlertText());
   });

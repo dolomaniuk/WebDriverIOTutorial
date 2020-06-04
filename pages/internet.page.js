@@ -1,4 +1,11 @@
 class Internet {
+  goLinkFromMainPage(text) {
+    browser.url("/");
+    let link = $(`//li[.='${text}']/a`);
+    link.waitForDisplayed();
+    link.click();
+  }
+
   get pageHeader() {
     return $("h1.heading");
   }
@@ -218,12 +225,11 @@ class Internet {
     return this.specificChildElement(index).getText();
   }
 
-  clickOnLink() {
-    if (this.firsLink.isDisplayed()) {
-      this.firsLink.click();
-    }
-    this.h3Header.waitForDisplayed();
-    // browser.pause(5000);
+  clickOnLink(text) {
+        browser.url("/");
+        let link = $(`//li[.='${text}']/a`);
+        link.waitForDisplayed();
+        link.click();
   }
 }
 module.exports = new Internet();

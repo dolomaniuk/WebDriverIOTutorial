@@ -2,7 +2,7 @@ internetPage = require("../pages/internet.page");
 
 describe("Switch Window", () => {
   it("should switch to the next window", () => {
-    browser.url(`${browser.options.baseUrl}/windows`);
+    internetPage.clickOnLink("Multiple Windows");
     internetPage.clickHereLink();
     // console.log("!!!!!!!!!!!!!!!!!!!" + browser.getWindowHandles());
     browser.switchWindow(`${browser.options.baseUrl}windows/new`);

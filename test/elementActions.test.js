@@ -3,7 +3,7 @@ internetPage = require("../pages/internet.page");
 describe("Test element actions", () => {
   it("should click element", () => {
     browser.url("/");
-    internetPage.clickOnLink();
+    internetPage.clickOnLink("A/B Testing");
     expect(browser.getUrl()).equals(
       "http://the-internet.herokuapp.com/abtest",
       "wrong url"
@@ -27,7 +27,7 @@ describe("Test element actions", () => {
   });
 
   it("should enter some numbers", () => {
-    browser.url(`${browser.options.baseUrl}/inputs`);
+    internetPage.clickOnLink("Inputs");
     internetPage.enterInInputField("2341");
     assert.equal("2341", internetPage.inputField.getValue());
   });
