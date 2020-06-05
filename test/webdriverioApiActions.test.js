@@ -1,6 +1,6 @@
 internetPage = require("../pages/internet.page");
 
-describe("WebdriverIO API Actions", () => {
+describe.skip("WebdriverIO API Actions", () => {
   it("should hover on figure 1", () => {
     internetPage.clickOnLink("Hovers");
     internetPage.hoverOnFigure(1);
@@ -39,6 +39,7 @@ describe("WebdriverIO API Actions", () => {
 describe("Scroll to Element", () => {
   it("should scroll to the footer", () => {
     browser.url("/");
+    // internetPage.pageHeader.waitForDisplayed({ timeout: 1000, reverse: true }); //element ("h1.heading") still displayed after 1000ms
     internetPage.pageHeader.waitForDisplayed();
     internetPage.scrollToPageFooter();
     assert.equal(true, internetPage.pageFooter.isDisplayedInViewport());

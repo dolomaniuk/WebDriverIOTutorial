@@ -88,6 +88,20 @@ class Internet {
     return $("#dropdown");
   }
 
+  get enableButton() {
+    return $("//form[@id='input-example']/button");
+  }
+  get inputEnableField() {
+    return $("//form[@id='input-example']/input");
+  }
+  /**
+   * Click the Enable/Disable Button
+   */
+  clickEnableButton() {
+    this.enableButton.waitForDisplayed();
+    this.enableButton.click();
+  }
+
   /**
    * text of item from dropdown
    */
@@ -226,10 +240,10 @@ class Internet {
   }
 
   clickOnLink(text) {
-        browser.url("/");
-        let link = $(`//li[.='${text}']/a`);
-        link.waitForDisplayed();
-        link.click();
+    browser.url("/");
+    let link = $(`//li[.='${text}']/a`);
+    link.waitForDisplayed();
+    link.click();
   }
 }
 module.exports = new Internet();
