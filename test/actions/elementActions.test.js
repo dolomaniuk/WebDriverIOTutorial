@@ -1,4 +1,5 @@
 internetPage = require("../../pages/internet.page");
+inputData = require("../../data/dataForInputField");
 
 describe("Test element actions", () => {
   it("should click element", () => {
@@ -28,8 +29,8 @@ describe("Test element actions", () => {
 
   it("should enter some numbers", () => {
     internetPage.clickOnLink("Inputs");
-    internetPage.enterInInputField("2341");
-    assert.equal("2341", internetPage.inputField.getValue());
+    internetPage.enterInInputField(inputData.text);
+    assert.equal(inputData.text, internetPage.inputField.getValue());
   });
 
   it("shoul clear value", () => {
