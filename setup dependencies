@@ -12,3 +12,4 @@ package.json
   },
 
   run specific test: npm test -- --spec .\test\webdriverioApiActions.test.js
+  run specific suite: npm run test -- --suite actions

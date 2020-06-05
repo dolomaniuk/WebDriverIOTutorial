@@ -1,4 +1,4 @@
-internetPage = require("../pages/internet.page").default;
+internetPage = require("../pages/internet.page");
 describe("Wait for Enabled", () => {
   it("should wait for the inpet field to be enabled", () => {
     internetPage.clickOnLink("Dynamic Controls");
