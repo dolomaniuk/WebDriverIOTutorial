@@ -94,6 +94,25 @@ class Internet {
   get inputEnableField() {
     return $("//form[@id='input-example']/input");
   }
+
+  get addElementButton() {
+    return $("//div[@class='example']/button");
+  }
+
+  get addedElementButton() {
+    return $("//div[@id='elements']/button[.='Delete']");
+  }
+
+  clickAddElementButton() {
+    this.addElementButton.waitForDisplayed();
+    this.addElementButton.click();
+  }
+
+  removeAddedElementButton() {
+    this.addedElementButton.waitForDisplayed();
+    this.addedElementButton.click();
+  }
+
   /**
    * Click the Enable/Disable Button
    */
