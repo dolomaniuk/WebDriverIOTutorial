@@ -103,6 +103,15 @@ class Internet {
     return $("//div[@id='elements']/button[.='Delete']");
   }
 
+  get pageButton() {
+    return $("#checkbox-example button");
+  }
+
+  clickPageButton() {
+    this.pageButton.waitForDisplayed();
+    this.pageButton.click();
+  }
+
   clickAddElementButton() {
     this.addElementButton.waitForDisplayed();
     this.addElementButton.click();
